@@ -1,0 +1,32 @@
+<div class="col-md-12">
+    <div class="row">
+    
+  <div class="col-md-12" style="margin-bottom:20px;">
+  <h3>All Topics</h3>
+  </div>
+  <div class="col-md-12">
+    <table class="col-md-12">
+      <tr>
+        <td>S.No</td>
+        <td>Topic name</td>
+        <td>Action</td>
+      </tr>
+      <tr *ngFor="let c of alltopics; let i= index;">
+        <td>{{i+1}}</td>
+        <td (click)="getQuizs(c)">{{c.topicName}}</td>
+        <td>
+            <a (click)="getQuizs(c)">All Quizs</a>
+        </td>
+      </tr>
+    </table>
+    <p style="text-align:center" *ngIf="alltopics.length==0">No data found!</p>
+  </div>
+</div>
+</div>
+<style>
+table,tr,td{
+border-collapse: collapse;
+border: 1px solid grey;
+text-align: center
+}
+</style>

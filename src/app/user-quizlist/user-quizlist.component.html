@@ -1,0 +1,33 @@
+<div class="col-md-12">
+    <div class="row">
+    
+  <div class="col-md-12" style="margin-bottom:20px;">
+  <h3>All Quiz list</h3>
+  </div>
+  <div class="col-md-12">
+    <table class="col-md-12">
+      <tr>
+        <td>S.No</td>
+        <td>Quiz name</td>
+        <td>Action</td>
+      </tr>
+      <tr *ngFor="let c of allquizs; let i= index;">
+        <td>{{i+1}}</td>
+        <td>{{c.quiz_name}}</td>
+        <td>
+            <a (click)="getquestions(c)" *ngIf="!c.participateIds.includes(loginserve.loggedId)">Take Test</a>
+            <a (click)="getscore(c)" *ngIf="c.participateIds.includes(loginserve.loggedId)">Click to see ur score <span *ngIf="c.score">-{{c.score}}/{{c.total}}</span></a>
+        </td>
+      </tr>
+    </table>
+    <p style="text-align:center" *ngIf="allquizs.length==0">No data found!</p>
+  </div>
+</div>
+</div>
+<style>
+table,tr,td{
+border-collapse: collapse;
+border: 1px solid grey;
+text-align: center
+}
+</style>

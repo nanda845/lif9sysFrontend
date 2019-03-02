@@ -1,0 +1,42 @@
+<div class="col-md-12">
+  <div class="row">
+      
+    <div class="col-md-12" style="margin-bottom:20px;">
+      <h3>Quiz</h3>
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12" *ngFor="let q of allQstn;  let i= index;">
+          <div class="row">
+          <div class="col-md-12">
+            <p>Q{{i+1}}.&nbsp;{{q.question}}</p>
+          </div>
+          <div class="col-md-12">
+            <!-- <input type="radio" [(ngModel)]="q.selectedanswer" value="A">A.&nbsp;{{q.opt_a}}&nbsp;&nbsp;&nbsp;
+            <input type="radio" [(ngModel)]="q.selectedanswer" value="B">B.&nbsp;{{q.opt_b}}&nbsp;&nbsp;&nbsp;
+            <input type="radio" [(ngModel)]="q.selectedanswer" value="C">C.&nbsp;{{q.opt_c}}&nbsp;&nbsp;&nbsp;
+            <input type="radio" [(ngModel)]="q.selectedanswer" value="D">D.&nbsp;{{q.opt_d}} -->
+        A.&nbsp;{{q.opt_a}}&nbsp;&nbsp;&nbsp;B.&nbsp;{{q.opt_b}}&nbsp;&nbsp;&nbsp;C.&nbsp;{{q.opt_c}}&nbsp;&nbsp;&nbsp;D.&nbsp;{{q.opt_d}}
+
+          </div>
+          <div class="col-md-12">
+              Type Option:<input type="text" [(ngModel)]="q.selectedanswer" maxlength="1">
+          </div>
+        </div>
+          <br><br>
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-primary" (click)="submitQuiz(allQstn)">Submit</button>
+          </div>
+        <p *ngIf="allQstn.length==0">No data found!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  table,tr,td{
+    border-collapse: collapse;
+    border: 1px solid grey;
+    text-align: center
+  }
+</style>

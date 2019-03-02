@@ -1,0 +1,60 @@
+<h2 style="text-align:center">Welcome</h2>
+<div class="col-md-offset-3 col-md-6 center" style="border:1px solid grey; padding:10px" *ngIf="loginpage">
+  <fieldset>
+  <form class="form-horizontal" (ngSubmit)="log_in(login)">
+  <h3 style="text-align:center">Login</h3>
+    <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-3" for="Mobile number">Mobile Number</label>
+    <div class="col-md-9 col-sm-9 col-xs-9">
+    <input type="text" class="form-control" name="mobilenumber" [(ngModel)]="login.mobilenumber" placeholder="Enter mobile number" maxlength="10">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-3" for="password">Password</label>
+    <div class="col-md-9 col-sm-9 col-xs-9">
+    <input type="password" class="form-control" name="password" [(ngModel)]="login.password" placeholder="Enter password">
+    </div>
+  </div>
+  <div class="text-center">
+    <button type="submit" style="text-align:center">Login</button>
+    <br>
+    <a (click)="enSignUp()" style="text-align:center">To Sign Up click here</a>
+  </div>
+  </form>
+</fieldset>
+</div>
+<div class="col-md-offset-3 col-md-6" style="border:1px solid grey; padding:10px;" *ngIf="signupPage">
+  <h3 style="text-align:center"> SignUp</h3>
+  <form class="form-horizontal" (ngSubmit)="sign_up(signup)">
+      <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-3" for="FullName">FullName</label>
+          <div class="col-md-9 col-sm-9 col-xs-9">
+          <input type="text" class="form-control" name="fullname" [(ngModel)]="signup.fullname" placeholder="Enter Full Name">
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-3" for="Mobile number">Mobile Number</label>
+          <div class="col-md-9 col-sm-9 col-xs-9">
+          <input type="text" class="form-control" name="mobilenumber" [(ngModel)]="signup.mobilenumber" placeholder="Enter mobile number" maxlength="10">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-3" for="password">Password</label>
+          <div class="col-md-9 col-sm-9 col-xs-9">
+          <input type="password" class="form-control" name="password" [(ngModel)]="signup.password" placeholder="Enter password">
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-3" for="password">Role</label>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+            <!-- <input type="password" class="form-control" placeholder="Enter password"> -->
+            <input type="radio" name="role" [(ngModel)]="signup.role" value="teacher">Teacher&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="role" [(ngModel)]="signup.role" value="student">Student
+            </div>
+          </div>
+        <div class="text-center">
+          <button type="submit" style="text-align:center">SignUp</button><br>
+          <a (click)="enlogin()" style="text-align:center">Click here to login</a>
+        </div>
+  </form>
+</div>

@@ -1,0 +1,46 @@
+<div class="col-md-12">
+  <div class="row">
+  
+<div class="col-md-12" style="margin-bottom:20px;">
+<h3>Course name:{{loginserve.course_name}}</h3>
+<button class="btn btn-primary" style="float:right" (click)="add()">Add Chapters</button>
+</div>
+<div class="col-md-12" *ngIf="!add_chapter">
+  <table class="col-md-12">
+    <tr>
+      <td>S.No</td>
+      <td>Chapter name</td>
+      <td>Action</td>
+    </tr>
+    <tr *ngFor="let c of chap; let i= index;">
+      <td>{{i+1}}</td>
+      <td (click)="goTotopics(c)">{{c.chaptername}}</td>
+      <td><button class="btn btn-danger">Delete</button></td>
+    </tr>
+  </table>
+  <p style="text-align:center" *ngIf="chap.length==0">No data found!</p>
+</div>
+<div class="col-md-12" *ngIf="add_chapter" style="border:1px solid gray">
+    <form class="form-horizontal" (ngSubmit)="addChapter(crs)">
+        <h3 style="text-align:center">Add Chapter</h3>
+          <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-3" for="courseName">Chapter Name</label>
+          <div class="col-md-9 col-sm-9 col-xs-9">
+          <input type="text" class="form-control" name="chapterName" [(ngModel)]="crs.chapterName" placeholder="Enter Chapter name" >
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" style="text-align:center">Save</button>
+          <button (click)="cancel()">Cancel</button>
+        </div>
+        </form>
+</div>
+</div>
+</div>
+<style>
+  table,tr,td{
+    border-collapse: collapse;
+    border: 1px solid grey;
+    text-align: center
+  }
+</style>

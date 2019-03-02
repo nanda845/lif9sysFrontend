@@ -1,0 +1,32 @@
+<div class="col-md-12">
+    <div class="row">
+    
+  <div class="col-md-12" style="margin-bottom:20px;">
+  <h3>Chapters</h3>
+  </div>
+  <div class="col-md-12">
+    <table class="col-md-12">
+      <tr>
+        <td>S.No</td>
+        <td>Chapter name</td>
+        <td>Action</td>
+      </tr>
+      <tr *ngFor="let c of allchapters; let i= index;">
+        <td>{{i+1}}</td>
+        <td (click)="getTopics(c)">{{c.chaptername}}</td>
+        <td>
+            <a (click)="getTopics(c)">All Topics</a>
+        </td>
+      </tr>
+    </table>
+    <p style="text-align:center" *ngIf="allchapters.length==0">No data found!</p>
+  </div>
+</div>
+</div>
+<style>
+table,tr,td{
+border-collapse: collapse;
+border: 1px solid grey;
+text-align: center
+}
+</style>
