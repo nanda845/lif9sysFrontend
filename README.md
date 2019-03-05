@@ -28,5 +28,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 #Run the following Commands
 npm install
-npm install bootstrap@3 --save
-ng add @ng-bootstrap/schematics
